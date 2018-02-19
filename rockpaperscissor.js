@@ -7,7 +7,7 @@
 function computerPlay() {
 	let hand = ["Rock", "Paper", "Scissor"];
 	let choice = hand[Math.floor(Math.random()*hand.length)];
-	return choice
+	return choice;
 }
 
 // Makes the player choose his hand
@@ -19,9 +19,9 @@ function playerSelection() {
 
 // Compare hand againts the computer and returns if you won or lost
 function playRound( playerSelection, computerPlay ) {
-	let win = "You da man!"
-	let loose = "Congradulation, you played yourself!"
-	let tie = "Boring, it's a tie"
+	let win = "You da man!";
+	let loose = "Congradulation, you played yourself!";
+	let tie = "Boring, it's a tie";
 
 	if (playerSelection == computerPlay) {
 		return tie;
@@ -55,27 +55,23 @@ function playRound( playerSelection, computerPlay ) {
 
 
 function game() {
-	let pwins = 0
-	let cwins = 0
-	let draw = 0
+	let pwins = 0;
+	let cwins = 0;
+	let draw = 0;
 	
 	// loop of 5 rounds
 	for (var i = 0; i < 5; i++) {
-		let player = playerSelection()
-		let computer = computerPlay()
-		let round = playRound(player, computer)
-		console.log(computer)
+		let player = playerSelection();
+		let computer = computerPlay();
+		let round = playRound(player, computer);
+		console.log(computer);
 
 		// if statment is relations to the result of playRound() function
 		if (round == "Boring, it's a tie"){
 			draw++;
-		}
-
-		if (round == "You da man!"){
+		} else if (round == "You da man!"){
 			pwins++;
-		}
-
-		else{
+		} else {
 			cwins++;
 		}
 	}
@@ -90,7 +86,7 @@ function game() {
 	}
 
 	if (pwins == cwins){
-		return "Seems like you need to go again and maybe try this time to win!"
+		return "Seems like you need to go again and maybe try this time to win!";
 	}
 
 	if (pwins > cwins){
